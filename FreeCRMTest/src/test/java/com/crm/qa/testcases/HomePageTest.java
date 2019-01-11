@@ -53,22 +53,6 @@ public class HomePageTest extends TestBase {
 		 testutil.switchToframe();
 		 Contactspage Contactspage = homepage.clickOnContactslink();
 	 }
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();
