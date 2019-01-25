@@ -9,26 +9,18 @@ import com.PHP.Base.TestBase;
 
 public class Homepage extends TestBase{
 	
-     // Click on UserName
-	@FindBy(xpath="//h3[@class='RTL']")
-	WebElement userNameLabel;
-	
-	
-	//Click on Home button
-	@FindBy(xpath="//a[contains(text(),'Home')]")
-	WebElement homeLink;
-	
+     
 	//click on Hotels
-	@FindBy(xpath="//a[@title='Hotels']")
-	WebElement HotelsLink;
+	@FindBy(xpath="//*[@id='social-sidebar-menu']/li[7]/a")
+	WebElement Hotels;
 	
 	
 	//click on Flights
-	@FindBy(xpath="//a[@title='Flights']")
-	WebElement FlightsLink;
+	@FindBy(xpath="//a[@href='#Flights']")
+	WebElement Flights;
 	
 	//constructor of homepage
-	public void HomePage() {
+	public Homepage() {
 		 PageFactory.initElements(driver, this);
 		 
 		}
@@ -37,21 +29,16 @@ public class Homepage extends TestBase{
 		return driver.getTitle();
 	}
 	
-	  public boolean verifycorrectUsername() {
-		return userNameLabel.isDisplayed();
-	}
-	public void clickonHomepage() {
-		homeLink.click();
-		return;
-	}
-	public Hotelpage clickonHotelsLink() {
-		HotelsLink.click();
-		return new Hotelpage();
+	 
+	public Hotelpage clickonHotelsLink() throws InterruptedException   {
+		Thread.sleep(3000);
+		Hotels.click();
+		return new Hotelpage(); 
 	}
 	
-	
-	public Flightspage clickonFlightsLink() {
-		FlightsLink.click();
-		return new Flightspage();
+	public Flightspage clickonFlightsLink() throws InterruptedException {
+		Thread.sleep(3000);
+		Flights.click();
+		  return new Flightspage();
 	}
 }

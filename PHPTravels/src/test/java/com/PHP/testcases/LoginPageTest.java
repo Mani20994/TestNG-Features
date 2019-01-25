@@ -28,7 +28,7 @@ public class LoginPageTest extends  TestBase {
 	 public void loginPageTitleTest() {
 	  
 	   String title = loginpage.validateLoginPageTitle();
-	   Assert.assertEquals(title, "Login");
+	   Assert.assertEquals(title, "Administator Login");
 	 }
 	 
 	 @Test(priority=2)

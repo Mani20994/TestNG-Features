@@ -7,21 +7,16 @@ import org.openqa.selenium.support.PageFactory;
 public class Loginpage extends TestBase {
 
 	//Page Factory-Object repository:
-	@FindBy(xpath="/html[1]/body[1]/div[5]/div[1]/div[1]/form[1]/div[1]/div[5]/div[1]/div[1]/input[1]")
+	@FindBy(xpath="//form[@class='form-signin form-horizontal wow fadeIn animated animated']//input[@placeholder='Email']")
 	WebElement Email;
 
-	@FindBy(xpath="/html[1]/body[1]/div[5]/div[1]/div[1]/form[1]/div[1]/div[5]/div[1]/div[2]/input[1]")
+	@FindBy(xpath="//input[@placeholder='Password']")
 	WebElement password;
 
-	@FindBy(xpath="//button[contains(text(),'Login')]")
+	@FindBy(xpath="//button[@type='submit']")
 	WebElement loginBtn;
 
-	//@FindBy(xpath="//button[contains(text(),'Sign Up;)]")
-	//WebElement signUpBtn;
-
-	//@FindBy(xpath="//img[contains(@class,'img-responsive')]")
-	//WebElement crmLogo;
-
+	
 	public Loginpage() {
 	 PageFactory.initElements(driver, this); 
 	 
@@ -35,9 +30,9 @@ public class Loginpage extends TestBase {
 	 //return crmLogo.isDisplayed();
 	//}
 
-	public Homepage login(String em, String pwd) throws InterruptedException  {
+	public Homepage login(String em, String pwd) throws InterruptedException   {
 	 Email.sendKeys(em);
-	 Thread.sleep(3000);
+	Thread.sleep(3000);
 	 password.sendKeys(pwd);
 	 Thread.sleep(3000);
 	 loginBtn.click();

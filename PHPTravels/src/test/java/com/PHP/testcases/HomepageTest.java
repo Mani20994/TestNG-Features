@@ -1,15 +1,16 @@
 package com.PHP.testcases;
 
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.PHP.Base.TestBase;
+import com.PHP.pages.Flightspage;
 import com.PHP.pages.Homepage;
 import com.PHP.pages.Hotelpage;
 import com.PHP.pages.Loginpage;
 import com.PHP.util.TestUtil;
+
 
 
 public class HomepageTest  extends TestBase{
@@ -18,7 +19,7 @@ public class HomepageTest  extends TestBase{
 	Homepage Homepage;
 	TestUtil testutil;
 	Hotelpage hotelpage;
-	
+	Flightspage flightpage;
 	//constuctor of homepage
 	public HomepageTest() {
 		 super();
@@ -34,30 +35,33 @@ public class HomepageTest  extends TestBase{
 	    testutil=new TestUtil();
 	    loginpage = new Loginpage();
 	    hotelpage=new Hotelpage();
+	   flightpage = new Flightspage();
 	    Homepage=loginpage.login(prop.getProperty("Email"), prop.getProperty("password"));
 	 }
 	
 	 @Test(priority=1)
 	 public void verifyHomepageTitleTest() {
 		String homepagetitle =Homepage.verifyHomePageTitle(); 
-		 Assert.assertEquals(homepagetitle,"Login","Home page title not matched");
+		 Assert.assertEquals(homepagetitle,"Administator Login","Home page title not matched");
 		}
 	 
+	 
 	 @Test(priority=2)
-	 public void verifyUserNameTest() {
-		 //testutil.switchToframe();
-	Assert.assertTrue( Homepage.verifycorrectUsername());
+	 
+	 public void verifyhotelstest() throws InterruptedException {
+		Hotelpage Hotelpage = Homepage.clickonHotelsLink();
 	 }
 	 
-	 @Test(priority=3)
-	 public void verifyHotelsLinktest() {
-		 //testutil.switchToframe();
-		 Hotelpage hotelspage = Homepage.clickonHotelsLink();
-	 }
-	@AfterMethod
-	public void tearDown() {
-		driver.quit();
-	}
+	@Test(priority=3)
+	 public void verifyflightstest() throws InterruptedException {
+			Flightspage Flightpage = Homepage.clickonFlightsLink();
+		 }
+	 
+	 
+	 //@AfterMethod
+	//public void tearDown() {
+		//driver.quit();
+	//}
 	}
 	
 	

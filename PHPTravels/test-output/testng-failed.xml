@@ -5,8 +5,7 @@
     <classes>
       <class name="com.PHP.testcases.HomepageTest">
         <methods>
-          <include name="verifyHotelsLinktest"/>
-          <include name="tearDown"/>
+          <include name="verifyhotelstest"/>
           <include name="setUp"/>
         </methods>
       </class> <!-- com.PHP.testcases.HomepageTest -->

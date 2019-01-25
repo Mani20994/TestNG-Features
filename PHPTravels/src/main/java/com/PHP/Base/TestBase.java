@@ -8,8 +8,6 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.Test;
-
 import com.PHP.util.TestUtil;
 
 
@@ -23,7 +21,7 @@ import com.PHP.util.TestUtil;
 	  
 	try {
 	 prop = new Properties();
-	 FileInputStream ip = new FileInputStream("C:\\Users\\Nxt\\eclipse-workspace\\PHPTravels\\src\\main\\java\\com\\PHP\\config\\config.properties");
+	 FileInputStream ip = new FileInputStream("C:\\Users\\Nxt\\git\\repository6\\PHPTravels\\src\\main\\java\\com\\PHP\\config\\config.properties");
 	prop.load(ip);
 
 	} catch (FileNotFoundException e) {
