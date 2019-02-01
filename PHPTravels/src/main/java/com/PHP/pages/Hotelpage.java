@@ -1,66 +1,169 @@
 package com.PHP.pages;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
 import com.PHP.Base.TestBase;
 
 public class Hotelpage  extends TestBase{
-//click on Hotels
-	@FindBy(xpath="//ul[@class='nav navbar-nav go-right']//li[2]//a[1]")
-	static
-	WebElement Hotellabel;
 	
-	//click on search 
-	//driver.findElement(By.xpath("html/body/div[1]/div[1]/div/div[3]/div/div/h3/span/span")).click();
-	@FindBy(xpath="//div[@id='select2-drop']//input[@type='text']")
-	static
-	WebElement Searchlabel;
+	//Status
+	@FindBy(xpath="//select[@name='hotelstatus']")
+	WebElement  Status;
 	
-	//click on check in
-	@FindBy(xpath="//div[9]//div[1]//table[1]//tbody[1]//tr[4]//td[3]")
-	static
-	WebElement Checkinlabel;
+	//Hotelname
+	@FindBy(xpath="//div[@id='GENERAL']//input[@placeholder='Hotel Name']")
+	WebElement  hotelname;
 	
-	//click on Check out
-	@FindBy(xpath="//div[10]//div[1]//table[1]//tbody[1]//tr[4]//td[4]")
-	static
+	//Hotel Description
+	@FindBy(xpath="/html/body/div[2]/div/div/form/div/div[1]/div/div[1]/div[6]/div/select")
+	WebElement  hoteldescription;
+
+	//Stars
+	@FindBy(xpath="//select[@name='hotelstars']")
+	WebElement  Stars;
 	
-	WebElement Checkoutlabel;
+	//Hoteltype
+	@FindBy(xpath="//select[@name='hoteltype']")
+	WebElement  hoteltype;
 	
+	//Featured
+	@FindBy(xpath="//select[@name='isfeatured']")
+	WebElement Featured ;
 	
+	//from date
+	//@FindBy(xpath="//input[contains(@placeholder,'From')]")
+	//WebElement Fromdate ;
 	
-	public Hotelpage() {
-		PageFactory.initElements(driver, this);
-	}
-	//Method for Hotels
-	public static boolean verifyHotellabel() {
-		Hotellabel.click();
-		return Hotellabel.isDisplayed();
-	}
+	//To date
+	//@FindBy(xpath="//input[contains(@placeholder,'To')]")
+	//WebElement Todate ;
 	
-	//Method for Search
-	public static boolean verifySearchlabel() throws InterruptedException {
-		Thread.sleep(2000);
-		//Searchlabel.click();
-		return Searchlabel.isDisplayed();
-		}
+	//Location
+	@FindBy(xpath="//span[@class='select2-chosen']")
+	WebElement Location ;
 	
-	public static boolean verifyCheckinlabel() {
+	//To Enter Location value
+	@FindBy(xpath="//div[@class='select2-search']//input[@type='text']")
+	WebElement LocationValue ;
+
+	//To Enter Location 
+	@FindBy(xpath="//div[@class='select2-search']//input[@type='text']")
+	WebElement LocationEnter ;
 	
-	return Checkinlabel.isDisplayed();
+    //Deposit/commision
+	@FindBy(xpath="//select[contains(@name,'deposittype')]")
+	WebElement  deposit;
 	
-	}
+	//Enter value of Deposit
+	@FindBy(xpath="//div[@id='GENERAL']//div[9]//div[2]//input[1]")
+	WebElement  depositvalue;
 	
-	public static boolean verifyCheckoutlabel() {
+	//Vat Tax
+	@FindBy(xpath="//select[contains(@name,'taxtype')]")
+	WebElement  vattax;
+	
+	//Value of Vat Tax
+	@FindBy(xpath="//div[@id='GENERAL']//div[10]//div[2]//input[1]")
+	WebElement  vattaxvalue;
+	
+	//Releated Hotels
+	//@FindBy(xpath="//div[@id='s2id_autogen2']//ul[contains(@class,'select2-choices')]")
+	//WebElement  relatedhotels;
+	
+	// click Releated Hotels
+		//@FindBy(xpath="//div[@id='s2id_autogen2']//ul[contains(@class,'select2-choices')]")
+		//WebElement  enterrelatedhotels;
 		
-		return Checkoutlabel.isDisplayed();
+    //Address on map
+		@FindBy(xpath="//input[@id='mapaddress']")
+		WebElement  addressonmap;
 		
-		}
+		//Lattitude
+		@FindBy(xpath="//input[@id='latitude']")
+		WebElement latitude ;
+		
+		//Longittude
+		@FindBy(xpath="//input[@id='longitude']")
+		WebElement longitude  ;
 	
-	public Homepage clickonHotels() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	}
+	//Cliclk on save button	
+	@FindBy(xpath="/html[1]/body[1]/div[2]/div[1]/div[1]/form[1]/div[1]/div[2]/button[1]")
+	WebElement  savebtn;
+	
+	//Click on Delete button
+	@FindBy(xpath="//tbody//tr[1]//td[12]//span[1]//a[3]")
+	WebElement  deletebtn;
+	
+	
+	//constructor of Hotelpage
+		public Hotelpage() {
+	    PageFactory.initElements(driver, this);
+ }
+	
+	
+		public void createAddHotel(String Stas,String htname, String hotdesc,String Strs,String HtType,String Featrd,String LocVal,String depsit,String depostval,String vattx,String vattxval,String addonmap,String lati,String longi) throws InterruptedException {
+	
+			Status.sendKeys(Stas);
+			Thread.sleep(2000);
+			hotelname.sendKeys(htname);
+			Thread.sleep(5000);
+			hoteldescription.sendKeys(hotdesc);
+			Thread.sleep(2000);
+			
+			Stars.sendKeys(Strs);
+			
+			hoteltype.sendKeys(HtType);
+			Thread.sleep(2000);
+			JavascriptExecutor js=(JavascriptExecutor)driver;
+			js.executeScript("window.scrollBy(0,2500)");
+			System.out.println("scrolled Down");
+			Thread.sleep(5000);
+			
+			Featured.sendKeys(Featrd);
+			Thread.sleep(3000);
+			
+			//Fromdate.sendKeys(Frmdate);
+			//Fromdate.sendKeys(Keys.ENTER);
+			//Todate.sendKeys(Todat);
+			//Todate.sendKeys(Keys.ENTER);
+			//Thread.sleep(5000);
+			
+			Location.click();
+			LocationValue.sendKeys(LocVal);
+			Thread.sleep(3000);
+			LocationEnter.sendKeys(Keys.ENTER);
+		    Thread.sleep(3000);
+			
+			deposit.sendKeys(depsit);
+			depositvalue.sendKeys(depostval);
+			Thread.sleep(5000);
+			vattax.sendKeys(vattx);
+			vattaxvalue.sendKeys(vattxval);
+			Thread.sleep(5000);
+			
+			//relatedhotels.click();
+			//Thread.sleep(3000);
+			//relatedhotels.sendKeys(relathot);
+			//Thread.sleep(3000);
+			 //enterrelatedhotels.sendKeys(Keys.ENTER);
+			
+			 //Address on map
+			 addressonmap.sendKeys(addonmap);
+			 latitude.sendKeys(lati);
+			 longitude.sendKeys(longi);
+			 
+			savebtn.click();
+			 deletebtn.click();
+	         Alert alert =driver.switchTo().alert();
+	         Thread.sleep(3000);
+	         alert.accept();
+		}
+}

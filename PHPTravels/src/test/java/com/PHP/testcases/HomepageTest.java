@@ -52,12 +52,13 @@ public class HomepageTest  extends TestBase{
 		Hotelpage Hotelpage = Homepage.clickonHotelsLink();
 	 }
 	 
-	@Test(priority=3)
+     @Test(priority=3)
 	 public void verifyflightstest() throws InterruptedException {
 			Flightspage Flightpage = Homepage.clickonFlightsLink();
 		 }
 	 
 	 
+     
 	 //@AfterMethod
 	//public void tearDown() {
 		//driver.quit();
