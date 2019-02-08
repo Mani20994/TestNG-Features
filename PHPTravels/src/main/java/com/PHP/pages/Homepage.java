@@ -31,9 +31,12 @@ public class Homepage extends TestBase{
   	@FindBy(xpath="/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/form[1]/button[1]")
   		WebElement Addbutton;
   	
-  	//click on Routes Add Button
+  	//click on Routes
 	@FindBy(xpath="//button[@type='submit']")
 		WebElement Addroutebutton;
+	
+	//click on add button 
+	
 	
 
 	//constructor of homepage
@@ -68,8 +71,13 @@ public class Homepage extends TestBase{
 	//to click on rouute label 
 	public void clickonRoutelabel() throws InterruptedException {
 		Thread.sleep(3000);
-		Hotellabel.click();
+		Routes.click();
 		Addroutebutton.click();
+	}
+
+	public void editflights() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	

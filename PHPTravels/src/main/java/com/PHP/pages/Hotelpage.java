@@ -162,6 +162,7 @@ public class Hotelpage  extends TestBase{
 			 
 			savebtn.click();
 			 deletebtn.click();
+			 //To handle delete pop up
 	         Alert alert =driver.switchTo().alert();
 	         Thread.sleep(3000);
 	         alert.accept();
