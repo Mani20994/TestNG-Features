@@ -82,6 +82,68 @@ public class AddResourcePage extends TestBase{
 		
 		  WebElement submit;
 	
+	  
+	  //Seach Keyword
+	  @FindBy(xpath="//input[@id='ctlTemplate_regMainBody_ctlResourceList_ctlSearchList_ctlSearchPanel_ctlFilter_txtKeyword']")
+	  WebElement keyword;
+
+	  //status
+	  @FindBy(xpath="//input[@id='ctlTemplate_regMainBody_ctlResourceList_ctlSearchList_ctlSearchPanel_ctlFilter_rblActive_2']")
+	  WebElement status;
+	  
+	  //Type
+	  @FindBy(xpath="//select[@id='ctlTemplate_regMainBody_ctlResourceList_ctlSearchList_ctlSearchPanel_ctlFilter_lstResourceType']")
+	  WebElement Type;
+	  
+	  //Category
+	  @FindBy(xpath="//select[@id='ctlTemplate_regMainBody_ctlResourceList_ctlSearchList_ctlSearchPanel_ctlFilter_lstResourceCategory']")
+	  WebElement category;
+	  
+	  
+	  //click on search
+	  @FindBy(xpath="//input[@id='ctlTemplate_regMainBody_ctlResourceList_ctlSearchList_ctlSearchPanel_btnSearch']")
+	  WebElement search;
+	  
+	  
+	  //click on cloud computing
+	  @FindBy(xpath="//a[contains(text(),'Cloud Computing')]")
+	  WebElement cloudcomputing;
+	  
+	  //click on general information
+	  
+	  @FindBy(xpath="//a[contains(text(),'General Information')]")
+	  WebElement geninformation;
+	  
+	  
+	  //DEscription
+	  @FindBy(xpath="//textarea[@name='ctlTemplate$regMainBody$ctlResourceGeneralInfo$txtDescription']")
+	  WebElement Description;
+	  
+	//Stsrt date
+	  @FindBy(xpath="//dd[@id='ctlTemplate_regMainBody_ctlResourceGeneralInfo_Dd5']//img[@class='calButton']")
+	  WebElement Startdate;
+	  
+	  @FindBy(xpath="//div[@class='next']")
+	  WebElement next;
+	  
+	  @FindBy(xpath="//div[@class='day day5'][contains(text(),'29')]")
+	  WebElement month;
+	  
+	  //End date
+	  @FindBy(xpath="//dd[@id='ctlTemplate_regMainBody_ctlResourceGeneralInfo_Dd7']//img[@class='calButton']")
+	  WebElement Enddate ;
+	  
+	  @FindBy(xpath="//div[@class='next']")
+	  WebElement Next ;
+	  
+	  @FindBy(xpath="//div[@class='day day0'][contains(text(),'31')]")
+	  WebElement Month;
+	  
+	  //click on submit
+	  
+	  @FindBy(xpath="//input[@id='ctlTemplate_regMainBody_btnSubmit']")
+	  WebElement Submit;
+	  
 	
 	public AddResourcePage() {
 		PageFactory.initElements(driver, this);
@@ -103,46 +165,6 @@ public class AddResourcePage extends TestBase{
 		  Thread.sleep(3000);
 		 
 		
-		/*//Organisation
-		  driver.findElement(By.xpath("//a[@id='ctlTemplate_regMainBody_ctlResourceGeneralInfo_Highest_org_multi_selection1_ctlOwnerOrgPicker_lnkPicker']")).click();
-		  Thread.sleep(3000);
-		 
-		
-		//window handle
-	      String parent=driver.getWindowHandle();
-	    // This will return the number of windows opened by Webdriver and will return Set of Strings
-	     Set<String>s1=driver.getWindowHandles();
-	     //Now we will iterate using Iterator
-	    Iterator<String>I1=s1.iterator();
-
-	    while(I1.hasNext())
-	    {
-	     String child_window=I1.next();
-
-	    //Here we will compare if parent window is not equal to child window then we will close
-
-	   if(!parent.equals(child_window))
-	   {
-	   driver.switchTo().window(child_window);
-
-	   System.out.println(driver.switchTo().window(child_window).getTitle());
-	   
-		
-		//search
-	   driver.findElement(By.xpath("//input[@id='ctlTemplate_regMainBody_ctlSearchList_ctlSearchList_ctlSearchPanel_btnSearch']")).click();
-		  Thread.sleep(3000);
-		 
-		//Add
-	   driver.findElement(By.xpath("//input[@id='ctlTemplate_regMainBody_ctlSearchList_ctlSearchList_ctlSearchList_Results_ctl01_lnkAdd']")).click();
-	   Thread.sleep(3000);
-		  
-		  //Checkout
-		driver.findElement(By.xpath("//input[@value='Check Out »']")).click();
-		Thread.sleep(3000);
-		
-		//switch to parent window
-	     driver.switchTo().window(parent);*/
-	     
 	     Language.click();
 	     Thread.sleep(3000);
 	     Name.sendKeys(nam);
@@ -181,7 +203,11 @@ public class AddResourcePage extends TestBase{
 	     contactnumber.sendKeys(contnum);
 	     Thread.sleep(3000);
 	     submit.click();
-		return  new AddResourcePage();
-
+	     return  new AddResourcePage();
 	}
+	     
+	     
+		
+
+	
 }

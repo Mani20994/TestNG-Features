@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Latitude Learning Test Suite">
+<test name="Latitude Test">
+
+
+<classes>
+<class name="com.lati.testcases.LoginpageTest"></class>
+<class name="com.lati.testcases.HomepageTest"></class>
+<class name="com.lati.testcases.AdminstratorTest"></class>
+<class name="com.lati.testcases.AddResourceTest"></class>
+<class name="com.lati.testcases.SearchResourceTest"></class>
+<class name="com.lati.testcases.AddOrganisationTest"></class>
+<class name="com.lati.testcases.SearchOrganisationTest"></class>
+<class name="com.lati.testcases.AddCategoryTest"></class>
+<class name="com.lati.testcases.SearchCategoryTest"></class>
+
+</classes>
+</test>
+</suite>

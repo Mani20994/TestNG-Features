@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.qa.util.TestUtil;
@@ -22,7 +23,7 @@ import com.qa.util.TestUtil;
 	  
 	try {
 	 prop = new Properties();
-	 FileInputStream ip = new FileInputStream("C:\\Users\\Nxt\\eclipse-workspace\\LatitudeLearning\\src\\main\\java\\com\\lati\\config\\config.properties");
+	 FileInputStream ip = new FileInputStream("C:\\Users\\Nxt\\git\\repository6\\LatitudeLearning\\src\\main\\java\\com\\lati\\config\\config.properties");
 	prop.load(ip);
 
 	} catch (FileNotFoundException e) {
@@ -39,7 +40,13 @@ import com.qa.util.TestUtil;
 	 
 	 if(browserName.equals("chrome")) {
 	  System.setProperty("webdriver.chrome.driver","C:\\chromedriver.exe");
-	  driver=new ChromeDriver();
+	  
+	  //headless browser testing (chrome)
+	  ChromeOptions options= new ChromeOptions();
+      options.addArguments("window-size-1400,800");
+      options.addArguments("headless");
+      
+	  driver=new ChromeDriver(options);
 	 }else if (browserName.equalsIgnoreCase("firefox")) {
 	  System.setProperty("webdriver.gecko.driver","C:\\geckodriver.exe "); 
 	  driver=new FirefoxDriver();

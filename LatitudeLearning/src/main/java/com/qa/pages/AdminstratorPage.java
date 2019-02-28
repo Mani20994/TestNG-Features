@@ -72,9 +72,9 @@ public class AdminstratorPage extends TestBase{
 	  
 	  //major
 	  
-	  @FindBy(xpath="//select[@id='ctlTemplate_regMainBody_ctlCourseGeneralInfoEdit_ctl01_lstCourseMajor']")
+	 /* @FindBy(xpath="//select[@id='ctlTemplate_regMainBody_ctlCourseGeneralInfoEdit_ctl01_lstCourseMajor']")
 		static
-		  WebElement major ;
+		  WebElement major ;*/
 		  
 	  //Approval Method
 	  @FindBy(xpath="//input[@id='ctlTemplate_regMainBody_ctlCourseGeneralInfoEdit_ctl01_lstApprovalRequired_0']")
@@ -205,7 +205,7 @@ public class AdminstratorPage extends TestBase{
 		PageFactory.initElements(driver, this);
 		 
 		}
-	public static  AdminstratorPage clickOnAddCourse(String cod,String nm,String tut,String desc ,String tarle,String hr,String majr,String delmet) throws InterruptedException {
+	public static  AdminstratorPage clickOnAddCourse(String cod,String nm,String tut,String desc ,String tarle,String hr,String delmet) throws InterruptedException {
 		
 		//Course
 		  driver.findElement(By.xpath("/html[1]/body[1]/form[1]/div[3]/table[1]/tbody[1]/tr[1]/td[1]/span[2]/div[9]/a[1]")).click();
@@ -266,8 +266,8 @@ public class AdminstratorPage extends TestBase{
 					Thread.sleep(3000);
 				 hours.sendKeys(hr);
 					Thread.sleep(3000);
-					major.sendKeys(majr);
-					Thread.sleep(3000);
+					/*major.click();
+					Thread.sleep(3000);*/
 				 
 				 deliverymethod.sendKeys(delmet);
 					Thread.sleep(3000);
@@ -351,14 +351,18 @@ public class AdminstratorPage extends TestBase{
 		  driver.findElement(By.xpath("//div[contains(text(),'15')]")).click();
 		  Thread.sleep(3000);
 		  
+		  //enrollment close date
 		  driver.findElement(By.xpath("//dl[@id='ctlTemplate_regMainBody_pnlCourseAdditionalInfo_ctlCourseAdditionalInfoEdit_dlCloseDateContainer']//img[@class='calButton']")).click();
 		  Thread.sleep(3000);
-			     
+			 
+		  //click on next month
 		  driver.findElement(By.xpath("//div[@class='next']")).click();
 		  Thread.sleep(3000);
 		  
+		  //select the date
 		  driver.findElement(By.xpath("//div[contains(text(),'16')]")).click();
 		  Thread.sleep(3000);
+		  
 		  
 		  driver.findElement(By.xpath("//fieldset[@id='additionalInfoFields']//dl[6]//dd[1]//img[1]")).click();
 		  Thread.sleep(3000);

@@ -1,7 +1,5 @@
 package com.lati.testcases;
 
-import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -22,7 +20,7 @@ public class AdminstratorTest  extends TestBase{
 	CoursePage coursepage;
 	
 	AdminstratorPage Adminstratorpage;
-	String sheetName="Courselist";
+	String sheetName="AddCourse";
 	//constuctor of homepage
 	public AdminstratorTest() {
 		 super();
@@ -52,9 +50,9 @@ public class AdminstratorTest  extends TestBase{
 	 }
 	 
 	 @Test(priority=1,dataProvider="getLATITestData")
-	 public void clickOnAddCourse(String Code,String Name,String Tuition,String Description,String TargetedLearners, String Duration ,String Major,String DeliveryMethod) throws InterruptedException {
+	 public void clickOnAddCourse(String Code,String Name,String Tuition,String Description,String TargetedLearners, String Duration ,String DeliveryMethod) throws InterruptedException {
 		 homepage.clickOnAdministratorLink();
-		 Adminstratorpage = AdminstratorPage.clickOnAddCourse(Code, Name,Tuition, Description,TargetedLearners,Duration,Major,DeliveryMethod); 
+		 Adminstratorpage = AdminstratorPage.clickOnAddCourse(Code, Name,Tuition, Description,TargetedLearners,Duration,DeliveryMethod); 
 		// AdminstratorPage.clickOnAddCourse(Code, Name,Tuition, Description,TargetedLearners,Duration,DeliveryMethod);
 		 
 	 }

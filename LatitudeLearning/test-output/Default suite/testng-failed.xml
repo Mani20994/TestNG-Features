@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.lati.testcases.AdminstratorTest">
+      <class name="com.lati.testcases.SearchCategoryTest">
         <methods>
-          <include name="clickOnAddCourse" invocation-numbers="0"/>
+          <include name="searchCategory" invocation-numbers="0"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- com.lati.testcases.AdminstratorTest -->
+      </class> <!-- com.lati.testcases.SearchCategoryTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

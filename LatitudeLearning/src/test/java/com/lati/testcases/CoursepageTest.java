@@ -1,5 +1,7 @@
 package com.lati.testcases;
 
-public class CoursepageTest {
+import com.lati.base.TestBase;
+
+public class CoursepageTest  extends TestBase{
 
 }

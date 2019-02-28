@@ -16,7 +16,7 @@ import com.lati.base.TestBase;
 		public static long PAGE_LOAD_TIMEOUT = 20;
 	    public static long IMPLICIT_WAIT = 10;
 
-	    public static String TESTDATA_SHEET_PATH="C:\\Users\\Nxt\\eclipse-workspace\\LatitudeLearning\\src\\main\\java\\com\\qa\\testdata\\CourseListData.xlsx";
+	    public static String TESTDATA_SHEET_PATH="C:\\Users\\Nxt\\git\\repository6\\LatitudeLearning\\src\\main\\java\\com\\qa\\testdata\\CourseListData.xlsx";
 	    static Workbook book;
 	    static Sheet sheet;
 	   static WorkbookFactory WorkFactory;

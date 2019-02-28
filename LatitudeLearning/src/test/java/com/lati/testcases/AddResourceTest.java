@@ -10,6 +10,7 @@ import com.qa.pages.AdminstratorPage;
 import com.qa.pages.CoursePage;
 import com.qa.pages.Homepage;
 import com.qa.pages.Loginpage;
+import com.qa.pages.SearchResourcePage;
 import com.qa.util.TestUtil;
 
 public class AddResourceTest  extends TestBase{
@@ -21,7 +22,7 @@ public class AddResourceTest  extends TestBase{
 	
 	AdminstratorPage adminstratorpage;
 	AddResourcePage addresourcepage;
-	
+    SearchResourcePage searchresourcepage;
 	String sheetName="AddResource";
 	
 	
@@ -38,6 +39,7 @@ public class AddResourceTest  extends TestBase{
 	   homepage=new Homepage();
 	   adminstratorpage=new AdminstratorPage();
 	   addresourcepage=new AddResourcePage();
+	   searchresourcepage=new SearchResourcePage();
 	    homepage=loginpage.login(prop.getProperty("UserName"), prop.getProperty("password"));
 	 }
 	 @DataProvider
@@ -53,10 +55,7 @@ public class AddResourceTest  extends TestBase{
 		// AdminstratorPage.clickOnAddCourse(Code, Name,Tuition, Description,TargetedLearners,Duration,DeliveryMethod);
 		 
 	 }
-	 
-
 	
-	 
 	// @AfterMethod
 	//public void tearDown() {
 		//driver.quit();

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Latitude Learning Test Suite]">
+  <test name="Latitude Test(failed)">
+    <classes>
+      <class name="com.lati.testcases.SearchCategoryTest">
+        <methods>
+          <include name="searchCategory" invocation-numbers="0"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.lati.testcases.SearchCategoryTest -->
+      <class name="com.lati.testcases.SearchOrganisationTest">
+        <methods>
+          <include name="clickOnSearchOrganisation" invocation-numbers="0"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.lati.testcases.SearchOrganisationTest -->
+      <class name="com.lati.testcases.LoginpageTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="loginTest"/>
+        </methods>
+      </class> <!-- com.lati.testcases.LoginpageTest -->
+      <class name="com.lati.testcases.SearchResourceTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="clickOnSearchResource" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.lati.testcases.SearchResourceTest -->
+    </classes>
+  </test> <!-- Latitude Test(failed) -->
+</suite> <!-- Failed suite [Latitude Learning Test Suite] -->
